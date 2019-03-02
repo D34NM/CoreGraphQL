@@ -9,8 +9,8 @@ namespace CoreGraphQL.GraphQL.Queries
         public UserQuery(IUserRepository userRepository)
         {
             Field<ListGraphType<UserType>>(
-                "products",
-                "Query all products",
+                "users",
+                "Query all users",
                 null,
                 _ => userRepository.GetAll() 
                 );
