@@ -25,9 +25,13 @@ namespace CoreGraphQL
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<UserDbContext>(
-                builder => builder.UseInMemoryDatabase("Users")
-                );
+                builder =>
+                {
+                    builder.UseInMemoryDatabase("Users");
+                    builder.EnableSensitiveDataLogging();
+                });
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
 
             services.AddScoped<IDependencyResolver>(provider => new FuncDependencyResolver(
                 provider.GetRequiredService));

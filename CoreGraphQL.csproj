@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
@@ -19,18 +18,22 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\**" />
+    <Compile Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Controllers\**" />
+    <None Remove="Models\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="Controllers\**" />
+    <Content Remove="Models\**" />
   </ItemGroup>
 
 </Project>
