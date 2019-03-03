@@ -5,6 +5,7 @@ namespace CoreGraphQL.Repositories
 {
     public interface IUserRepository
     {
+        User GetById(int id);
         IEnumerable<User> GetAll();
     }
 }

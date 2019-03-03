@@ -21,9 +21,13 @@ namespace CoreGraphQL.Data
                 BuilderSetup.DisablePropertyNamingFor<Order, User>(o => o.User);
                 BuilderSetup.DisablePropertyNamingFor<User, int>(u => u.Id);
                 
-                var address = Builder<Address>.CreateNew().Build();
+                var address = Builder<Address>
+                    .CreateNew()
+                    .Build();
 
-                var orders = Builder<Order>.CreateListOfSize(5).Build();
+                var orders = Builder<Order>
+                    .CreateListOfSize(5)
+                    .Build();
 
                 var user = Builder<User>.CreateNew()
                     .With(u => u.Address, address)
