@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using CoreGraphQL.Data.Entities;
 using FizzWare.NBuilder;
-using Microsoft.EntityFrameworkCore;
 
 namespace CoreGraphQL.Data
 {

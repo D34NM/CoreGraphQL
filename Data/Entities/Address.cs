@@ -1,5 +1,3 @@
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-
 namespace CoreGraphQL.Data.Entities
 {
     public class Address

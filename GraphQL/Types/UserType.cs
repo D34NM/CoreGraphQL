@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using CoreGraphQL.Data.Entities;
 using CoreGraphQL.Repositories;
 using GraphQL.DataLoader;
