@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace CoreGraphQL.Data.Entities
 {
@@ -10,5 +11,6 @@ namespace CoreGraphQL.Data.Entities
         public DateTime DateOfBirth { get; set; }
         public UserType UserType { get; set; }
         public Address Address { get; set; }
+        public IEnumerable<Order> Orders { get; set; }
     }
 }

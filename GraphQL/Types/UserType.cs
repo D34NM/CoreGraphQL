@@ -1,12 +1,14 @@
+using System.Threading.Tasks;
 using CoreGraphQL.Data.Entities;
 using CoreGraphQL.Repositories;
+using GraphQL.DataLoader;
 using GraphQL.Types;
 
 namespace CoreGraphQL.GraphQL.Types
 {
     public sealed class UserType : ObjectGraphType<User>
     {
-        public UserType(IAddressRepository addressRepository)
+        public UserType(IAddressRepository addressRepository, IOrdersRepository ordersRepository, IDataLoaderContextAccessor dataLoader)
         {
             Field(m => m.Id).Description("The user unique id");
             Field(m => m.FirstName).Description("The users first name");
@@ -18,6 +20,12 @@ namespace CoreGraphQL.GraphQL.Types
                 "The address of the user",
                 null,
                 context => addressRepository.GetById(context.Source.Id));
+            Field<ListGraphType<OrderType>>(
+                "orders",
+                "Orders made by the user",
+                null,
+                context => ordersRepository.GetForUserId(context.Source.Id));
+
         }
     }
 }

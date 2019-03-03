@@ -29,9 +29,11 @@ namespace CoreGraphQL
                 {
                     builder.UseInMemoryDatabase("Users");
                     builder.EnableSensitiveDataLogging();
+                    builder.UseQueryTrackingBehavior(QueryTrackingBehavior.TrackAll);
                 });
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<IOrdersRepository, OrdersRepository>();
 
             services.AddScoped<IDependencyResolver>(provider => new FuncDependencyResolver(
                 provider.GetRequiredService));
@@ -42,7 +44,8 @@ namespace CoreGraphQL
             {
                 options.ExposeExceptions = true;
             })
-            .AddGraphTypes(ServiceLifetime.Scoped);
+            .AddGraphTypes(ServiceLifetime.Scoped)
+            .AddDataLoader();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
