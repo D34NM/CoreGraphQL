@@ -7,7 +7,7 @@ namespace CoreGraphQL.Repositories
 {
     public class OrdersRepository : IOrdersRepository
     {
-        private UserDbContext _context;
+        private readonly UserDbContext _context;
 
         public OrdersRepository(UserDbContext userDbContext)
         {
@@ -22,7 +22,7 @@ namespace CoreGraphQL.Repositories
         public ILookup<int, Order> GetForUsers(IEnumerable<int> ids)
         {
             var orders = _context.Orders.Where(order => ids.Contains(order.Id));
-            return orders.ToLookup(order => order.Id);
+            return orders.ToLookup(order => order.UserId);
         }
     }
 }
