@@ -5,7 +5,7 @@ using CoreGraphQL.Repositories;
 using GraphQL.DataLoader;
 using GraphQL.Types;
 
-namespace CoreGraphQL.GraphQL.Types
+namespace CoreGraphQL.GraphQL.Types.Query
 {
     public sealed class UserType : ObjectGraphType<User>
     {

@@ -10,6 +10,7 @@ namespace CoreGraphQL.GraphQL.Schemas
             : base(resolver)
         {
             Query = resolver.Resolve<UserQuery>();
+            Mutation = resolver.Resolve<UserMutation>();
         }
     }
 }

@@ -1,7 +1,7 @@
 using CoreGraphQL.Data.Entities;
 using GraphQL.Types;
 
-namespace CoreGraphQL.GraphQL.Types
+namespace CoreGraphQL.GraphQL.Types.Query
 {
     public class OrderType : ObjectGraphType<Order>
     {

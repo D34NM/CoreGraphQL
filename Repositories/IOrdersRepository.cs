@@ -9,5 +9,6 @@ namespace CoreGraphQL.Repositories
         IEnumerable<Order> GetForUserId(int id);
 
         ILookup<int, Order> GetForUsers(IEnumerable<int> ids);
+        Order Add(Order order);
     }
 }

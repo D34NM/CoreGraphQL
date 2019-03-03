@@ -1,4 +1,4 @@
-using CoreGraphQL.GraphQL.Types;
+using CoreGraphQL.GraphQL.Types.Query;
 using CoreGraphQL.Repositories;
 using GraphQL.Types;
 

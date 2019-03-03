@@ -1,6 +1,6 @@
 using GraphQL.Types;
 
-namespace CoreGraphQL.GraphQL.Types
+namespace CoreGraphQL.GraphQL.Types.Query
 {
     public class UserTypeEnumType : EnumerationGraphType<Data.Entities.UserType>
     {
